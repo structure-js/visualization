@@ -1,0 +1,113 @@
+body{
+    margin: auto;
+}
+.contents{
+    margin: auto;
+    width: 1024px;
+}
+header{
+    margin: 20px;
+}
+textarea{
+    display: block;
+    resize: none;
+    width: 700px;
+    height: 200px;
+}
+.button-try{
+    background-color: #555555;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+.container{
+    margin: 50px;
+}
+/* https://codepen.io/philippkuehn/pen/QbrOaN */
+.layout h3 {
+    text-align: center;
+}
+.layout ul {
+    font-size: 20px;
+    position: relative;
+    padding: 1em 0;
+    white-space: nowrap;
+    margin: 0 auto;
+    text-align: center;
+}
+.layout ul::after {
+    content: '';
+    display: table;
+    clear: both;
+}
+.layout li {
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+    list-style-type: none;
+    position: relative;
+    padding: 1em 0.5em 0 0.5em;
+}
+.layout li::before, .layout li::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 50%;
+    border-top: 1px solid #ccc;
+    width: 50%;
+    height: 1em;
+}
+.layout li::after {
+    right: auto;
+    left: 50%;
+    border-left: 1px solid #ccc;
+}
+.layout li:only-child::after, .layout li:only-child::before {
+    display: none;
+}
+.layout li:only-child {
+    padding-top: 0;
+}
+.layout li:first-child::before, .layout li:last-child::after {
+    border: 0 none;
+}
+.layout li:last-child::before {
+    border-right: 1px solid #ccc;
+    border-radius: 0 5px 0 0;
+}
+.layout li:first-child::after {
+    border-radius: 5px 0 0 0;
+}
+.layout ul ul::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    border-left: 1px solid #ccc;
+    width: 0;
+    height: 1em;
+}
+.layout li a {
+    border: 1px solid #ccc;
+    padding: 0.5em 0.75em;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 5px;
+    color: #333;
+    position: relative;
+    top: 1px;
+}
+.layout li a:hover, .layout li a:hover + ul li a {
+    background: #e9453f;
+    color: #fff;
+    border: 1px solid #e9453f;
+}
+.layout li a:hover + ul li::after, .layout li a:hover + ul li::before, .layout li a:hover + ul::before, .layout li a:hover + ul ul::before {
+    border-color: #e9453f;
+}
