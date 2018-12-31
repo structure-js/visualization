@@ -112,7 +112,41 @@ const visualization = {
     },
     Tree: function(tree){
         var layout = this.Template('Tree');
+        const recursiveFunction = function(parents,pUl,cur){
+            var li = document.createElement('li');
+            var a = document.createElement('a');
+            a.innerHTML += `${cur.value}`
+            li.appendChild(a);
+            pUl.appendChild(li);
+            parents.appendChild(pUl);
+            if(cur.children.length === 0) return 0;
+
+            var cUl = document.createElement('ul');
+            for(var e of cur.children){
+                recursiveFunction(li,cUl,e);
+            }
+        }
+        var ul = document.createElement('ul');
+        recursiveFunction(layout,ul,tree.root);
     },
+    BinarySearchTree: function(bst){
+        var layout = this.Template('BinarySearchTree');
+        const recursiveFunction = function(parents,pUl,cur){
+            var li = document.createElement('li');
+            var a = document.createElement('a');
+            a.innerHTML += `${cur.value}`
+            li.appendChild(a);
+            pUl.appendChild(li);
+            parents.appendChild(pUl);
+            if(cur.children.length === 0 || (cur.children[0] == null && cur.children[1] == null)) return 0;
+            var cUl = document.createElement('ul');
+            for(var e of cur.children){
+                recursiveFunction(li,cUl,e);
+            }
+        }
+        var ul = document.createElement('ul');
+        recursiveFunction(layout,ul,bst.root);
+    }
 }
 const run = function() {
     var text = document.getElementsByClassName('code')[0].value;
