@@ -96,10 +96,22 @@ const visualization = {
         this.Heap(heap,'PriorityQueue');
     },
     Graph: function(graph){
-        // graph
+        var layout = this.Template('Graph');
+        layout.style.height = '350px';
+        var nodeList = [];
+        var edgeList = [];
+        for(var n of graph.getVertexIterator()){
+            nodeList.push({id:n.value,label:n.value});
+        }
+        for(var e of graph.getEdgeIterator()){
+            edgeList.push({from:e.vs.value, to: e.ve.value})
+        }
+        var nodes = new vis.DataSet(nodeList);
+        var edges = new vis.DataSet(edgeList);
+        var network = new vis.Network(layout, {nodes:nodes,edges:edges},{});
     },
     Tree: function(tree){
-        // tree
+        var layout = this.Template('Tree');
     },
 }
 const run = function() {
