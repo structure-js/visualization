@@ -97,7 +97,10 @@ const visualization = {
     },
     Graph: function(graph){
         var layout = this.Template('Graph');
-        layout.style.height = '350px';
+        var layoutCVS = document.createElement('div');
+        layout.appendChild(layoutCVS);
+        layoutCVS.style.height = '350px';
+        layoutCVS.style.border = '1px solid black';
         var nodeList = [];
         var edgeList = [];
         for(var n of graph.getVertexIterator()){
@@ -108,7 +111,7 @@ const visualization = {
         }
         var nodes = new vis.DataSet(nodeList);
         var edges = new vis.DataSet(edgeList);
-        var network = new vis.Network(layout, {nodes:nodes,edges:edges},{});
+        var network = new vis.Network(layoutCVS, {nodes:nodes,edges:edges},{});
     },
     Tree: function(tree){
         var layout = this.Template('Tree');
