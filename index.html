@@ -20,7 +20,49 @@
             <textarea class='code'>var stack = new Stack();
 stack.push(3);
 stack.push(4);
-visualization.Stack(stack);</textarea>
+stack.push(8);
+stack.push(7);
+stack.push(1);
+visualization.Stack(stack);
+
+var bst = new BinarySearchTree();
+bst.insert(2);
+bst.insert(3);
+bst.insert(1);
+bst.insert(4);
+bst.insert(5);
+bst.insert(8);
+bst.insert(9);
+bst.insert(10);
+bst.insert(11);
+bst.insert(20);
+bst.insert(15);
+bst.insert(17);
+bst.insert(16);
+bst.insert(12);
+bst.insert(13);
+visualization.BinarySearchTree(bst);
+
+var graph = new Graph();
+graph.addVertex('A');
+graph.addVertex('B');
+graph.addVertex('C');
+graph.addVertex('D');
+graph.addVertex('E');
+graph.addVertex('F');
+graph.addVertex('G');
+graph.addEdge('A', 'B', 1);
+graph.addEdge('A', 'C', 2);
+graph.addEdge('B', 'C', 3);
+graph.addEdge('C', 'A', 3);
+graph.addEdge('C', 'D', 3);
+graph.addEdge('C', 'E', 2);
+graph.addEdge('D', 'F', 4);
+graph.addEdge('E', 'F', 1);
+graph.addEdge('E', 'G', 2);
+graph.addEdge('G', 'A', 1);
+graph.addEdge('G', 'B', 2);
+visualization.Graph(graph)</textarea>
             <button class='button-try' onclick='run()'>Try it</button>
         </div>
         <div class='container'>
